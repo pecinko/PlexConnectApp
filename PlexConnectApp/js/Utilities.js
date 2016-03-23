@@ -124,7 +124,9 @@ var createSpinner = function(title) {
     </activityIndicator>
   </loadingTemplate>
 </document>`
-  var parser = new DOMParser();
+  if (!parser) {
+    var parser = new DOMParser();
+  }
   var doc = parser.parseFromString(docString, "application/xml");
   return doc;
 }
